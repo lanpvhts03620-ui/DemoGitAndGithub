@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FA812F;
+    background: linear-gradient(to right, #FA812F, #FAB12F);
+    font-family: "Open Sans", sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+.logo-container{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+img{
+    width: 100px;
+}
+.container {
+    position: relative;
+    max-width: 380px;
+    width: 100%;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0), #FA812F);
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+}
+
+.form h2 {
+    color: #DD0303;
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.inputBox input {
+    width: calc(100% - 20px);
+    padding: 15px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid #DD0303;
+    transition: border-color 0.3s;
+}
+
+.inputBox input:focus {
+    border-color: #DD0303;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    padding: 0 5px;
+    font-size: 16px;
+    font-size: 16px;
+    color: #DD0303;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+    color: #DD0303;
+    transform: translateY(-30px);
+    font-size: 14px;
+}
+
+.inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #DD0303;
+    transition: width 0.3s;
+}
+
+.inputBox input:valid~i,
+.inputBox input:focus~i {
+    width: 100%;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.links a {
+    font-size: 14PX;
+    color: #DD0303;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #DD0303;
+}
+
+.bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(207, 126, 91, 0.5);
+    pointer-events: none;
+    animation: bubble 8s infinite ease-in-out;
+    animation-delay: calc(-50s * var(--i));
+}
+
+@keyframes bubble {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(50%, -20px) scale(2);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(100%, -40px) scale(1);
+        opacity: 1;
+    }
+}
+
+input [type="submit"] {
+    border: none;
+    outline: none;
+    background: #DD0303;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    color: #DD0303;
+    transition: background 0.3s, transform 0.35;
+    position: relative;
+    z-index: 1;
+}
+
+input [type="submit"]:hover {
+    background: #DD0303;
+    transform: translateY(-3px);
+}
+
+input [type="submit"]:active {
+    transform: translateY(1px);
+}
+
+button {
+    background-color: #FA812F;
+    outline: #DD0303;
+    border-radius: 5px;
+    color: #fff;
+    font-family: sans-serif;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+button> a{
+    color: #fff;
+}
+
+button:hover {
+    color: #fff;
+    box-shadow: 0 0 5px rgba(249, 249, 252, 0.4);
+    text-decoration: hidden;
+}
+
+button {
+    color: #FAB12F;
+    border-color: #FAB12F;
+    color: #fff;
+    border-color: #FA812F;
+    box-shadow: 0 0 5px rgba(78, 84, 200, 0.4);
+    opacity: 1;
+}
+
+button:hover {
+    background-color: #FAB12F;
+    color: #fff;
+    border-color: #FAB12F;
+    box-shadow: 0 0 5px rgba(78, 84, 200, 0.4);
+}
+
+.btn {
+    background-color: #fff;
+    color: #DD0303;
+}
